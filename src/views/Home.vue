@@ -1,0 +1,38 @@
+<template>
+    <div class="home">
+     <!--Navbar></Navbar-->
+      <Hero/>
+        <products-list></products-list>
+
+           <div class="container h-100">
+        <div class="row p-5 h-100 justify-content-center align-items-center">
+          <div class="col-md-6">
+            <img src="../assets/img/products/product.jpg" alt="" width="400">
+          </div>
+          <div class="col-md-6">
+            <h3>Learn More About us</h3>
+            <p>
+              Contact us - 0778361088
+          
+            </p>
+             <button class="btn custom-btn btn-outline-primary mr-4">Browse Products</button>
+          </div>
+        </div>
+      </div>
+           <!--Login></Login-->
+
+     <!--mini-cart></mini-cart-->
+  </div>
+</template>
+
+<script>
+// @ is an alias to /src
+import Hero from "@/components/Hero.vue";
+
+export default {
+  name: "Home",
+  components: {
+    Hero
+  }
+};
+</script>
