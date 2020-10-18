@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-     <!--Navbar></Navbar-->
+     <Navbar></Navbar>
       <Hero/>
         <products-list></products-list>
 
