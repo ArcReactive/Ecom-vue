@@ -19,7 +19,7 @@
           </div>
         </div>
       </div>
-           <!--Login></Login-->
+           <Login></Login>
 
      <!--mini-cart></mini-cart-->
   </div>
@@ -28,11 +28,12 @@
 <script>
 // @ is an alias to /src
 import Hero from "@/components/Hero.vue";
+import Login from "@/components/Login.vue";
 
 export default {
   name: "Home",
   components: {
-    Hero
+    Hero,Login
   }
 };
 </script>
