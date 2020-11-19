@@ -22,12 +22,10 @@
                             
                             <h5 class="text-center">Login Please</h5>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
                                 <input type="email" v-model="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                                 <small class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
                                 <input type="password" @keyup.enter="login" v-model="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                             </div>
 
@@ -72,14 +70,69 @@
 </template>
 
 <script>
-//import {fb, db} from '../firebase'
+import {fb, db} from '../firebase'
 // import { use } from 'vue/types/umd';
 export default {
   name: "Login",
   props: {
     msg: String
+  },
+  data(){
+      return {
+          name:null,
+          email:null,
+          password:null
+      }
+  },
+  methods:{
+      login(){
+          fb.auth().signInWithEmailAndPassword(this.email, this.password)
+                        .then(() => {
+                        $('#login').modal('hide')
+                          this.$router.replace('admin');  
+                        })
+                        .catch(function(error) {
+                            // Handle Errors here.
+                            var errorCode = error.code;
+                            var errorMessage = error.message;
+                            if (errorCode === 'auth/wrong-password') {
+                                alert('Wrong password.');
+                            } else {
+                                alert(errorMessage);
+                            }
+                            console.log(error);
+                    });
+      },
+      register(){
+            fb.auth().createUserWithEmailAndPassword(this.email, this.password)
+                .then((user) => {
+                    $('#login').modal('hide')
+                    console.log(user.user.uid);
+                    db.collection("profiles").doc(user.user.uid).set({
+                              name: this.name
+                            })
+                            .then(function() {
+                                console.log("Document successfully written!");
+                            })
+                            .catch(function(error) {
+                                console.error("Error writing document: ", error);
+                            });
+                    this.$router.replace('admin');
+                }) 
+                .catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                if (errorCode == 'auth/weak-password') {
+                    alert('The password is too weak.');
+                } else {
+                    alert(errorMessage);
+                }
+                console.log(error);
+            });
+      }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
