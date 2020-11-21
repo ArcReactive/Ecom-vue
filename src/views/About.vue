@@ -24,7 +24,7 @@
           <div class="row h-100 justify-content-center align-items-center">
             <div class="col-md-5">
                 <div class="graphic">
-                    <img src="../assets/img/svg/woman-carrying-IKEA-PS-watering-cans-ai020102-PH126968-ikea-l-thumb.jpg" alt="" width="450px">
+                    <img src="../assets/img/svg/e-commerce.jpg" alt="" width="450px">
                 </div>
             </div>
             <div class="col-md-7">

@@ -11,8 +11,8 @@
                   “Oftentimes consumers, clients, and customers are not just buying a product, they are buying an experience, a feeling, a perception, a person(YOU) and ultimately the IKEA BRAND”
                 </p>
                 <div class="hero-btn mt-5">
-                    <button class="btn custom-btn btn-info mr-4">Explore</button>
-                    <button class="btn custom-btn btn-outline-secondary">Products</button>
+                  <button class="btn custom-btn btn-info mr-4" data-toggle="modal" data-target="#login">Explore</button>
+                  <button class="btn custom-btn btn-outline-secondary">Products</button>
                 </div>
               </div>
             </div>

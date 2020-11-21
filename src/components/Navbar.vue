@@ -4,14 +4,14 @@
       class="navbar custom-nav fixed-top navbar-expand-lg navbar-light bg-light"
     >
       <div class="container">
-        <div class="col-md-1">
-          <div class="graphic">
-            <img src="/img/svg/ikea.jpg" alt="" width="50px" />
+        
+        <router-link class="navbar-brand" to="/">
+          <div class="col-md-1">
+            <div class="graphic">
+              <img src="../assets/img/svg/IKEA-LogoPNG.png" alt="" width="150px" />
+            </div>
           </div>
-        </div>
-        <router-link class="navbar-brand" to="/"
-          >IKEA Sri Lanka Shop</router-link
-        >
+        </router-link>
         <button
           class="navbar-toggler"
           type="button"
@@ -25,43 +25,45 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
+
             <li class="nav-item">
               <router-link to="/" class="nav-link">Home</router-link>
             </li>
-
             <li class="nav-item">
-              <router-link to="/products" class="nav-link" href="#"
-                >Products</router-link
-              >
+              <router-link to="/products" class="nav-link" href="#">Help</router-link>
             </li>
-
             <li class="nav-item">
-              <router-link to="/about" class="nav-link" href="#"
-                >About Us</router-link
-              >
+              <router-link to="/contactus" class="nav-link" href="#">Contact us</router-link>
             </li>
+            
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <input
-              class="form-control mr-sm-2"
-              style="width:300px;"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <a
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <input
+                  class="form-control mr-sm-2"
+                  style="width: 400px"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+              </li>
+              <!--a
               class="btn btn-outline-success my-2 my-sm-0"
               data-toggle="modal"
               data-target="#login"
               >Get Start</a
-            >
-            <a
-              class="btn btn-outline-info border-0 mx-2 my-2 my-sm-0"
-              data-toggle="modal"
-              data-target="#miniCart"
-            >
-              <i class="fas fa-cart-plus"></i>
-            </a>
+            -->
+              <li class="nav-item">
+                <a
+                  class="btn btn-outline-info border-0 mx-2 my-2 my-sm-0"
+                  data-toggle="modal"
+                  data-target="#miniCart"
+                >
+                  <i class="fas fa-cart-plus"></i>
+                </a>
+              </li>
+            </ul>
           </form>
         </div>
       </div>
@@ -73,9 +75,9 @@
 export default {
   name: "Navbar",
   props: {
-    msg: String
+    msg: String,
   },
-  components: {}
+  components: {},
 };
 </script>
 
