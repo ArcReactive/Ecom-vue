@@ -11,12 +11,12 @@
                   “Oftentimes consumers, clients, and customers are not just buying a product, they are buying an experience, a feeling, a perception, a person(YOU) and ultimately the IKEA BRAND”
                 </p>
                 <div class="hero-btn mt-5">
-                  <button class="btn custom-btn btn-info mr-4" data-toggle="modal" data-target="#login">Explore</button>
+                  <button class="btn custom-btn btn-info mr-4" @click="goToAbout">Explore</button>
                   <button class="btn custom-btn btn-outline-secondary">Products</button>
                 </div>
               </div>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-5">
                 <div class="graphic">
                     <img src="../assets/img/svg/final.jpg" alt="" width="450px">
                 </div>
@@ -31,11 +31,16 @@ export default {
   name: "Hero",
   props: {
     msg: String
+  },
+  methods: {
+    goToAbout: function(){
+      this.$router.push("/about")
+    }
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+<!-- Add "scoped" attribute to limit CSS to this component only //data-toggle="modal" data-target="#login"-->
 <style scoped lang="scss">
   .hero{
     padding-top: 7rem;

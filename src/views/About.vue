@@ -13,29 +13,34 @@
                 </p>
               </div>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-5">
                 <div class="graphic">
                     <img src="../assets/img/svg/world-map_2400.jpg" alt="" width="450px">
                 </div>
             </div>
           </div>
-        </div>
-        <div class="container h-100">
           <div class="row h-100 justify-content-center align-items-center">
             <div class="col-md-5">
                 <div class="graphic">
-                    <img src="../assets/img/svg/e-commerce.jpg" alt="" width="450px">
+                    <img src="../assets/img/svg/woman-carrying-IKEA-PS-watering-cans-ai020102-PH126968-ikea-l-thumb.jpg" alt="" width="450px">
                 </div>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-5">
               <div class="hero-content">
                 <h1 class="hero-title">
-                  Together, all over the world
+                  Take a look at the year that passed
                 </h1>
-                <p>
-                  The IKEA Brand unites thousands of co-workers and hundreds of companies with different owners around the world. The retail business is organised in a franchise system with 12 franchisees in 54 markets that – together with the franchisor and other parts of the business – continuously improve and develop the brand.
+                <p>                 
+                  People all over the world found new purpose for their homes as they changed their living rooms into offices and rediscovered life at home.
                 </p>
               </div>
+            </div>
+          </div>
+          <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-md-11">
+                <div class="graphic">
+                    <img src="../assets/img/svg/a-boy-playing-in-his-room-ai01-02-PH156118-ikea-l.jpg" alt="" width="1000px">
+                </div>
             </div>
           </div>
         </div>

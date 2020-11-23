@@ -2,12 +2,12 @@
   <div class="home">
     <Navbar></Navbar>
     <Hero />
-    <products-list></products-list>
+    <!--products-list></products-list-->
 
     
     <Login></Login>
 
-    <mini-cart></mini-cart>
+    <!--mini-cart></mini-cart-->
   </div>
 </template>
 

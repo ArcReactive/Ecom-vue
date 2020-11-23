@@ -1,33 +1,69 @@
 <template>
   <div class="hero">
-      <Navbar></Navbar>
+    <Navbar></Navbar>
     <div class="container h-100">
       <div class="row p-5 h-100 justify-content-center align-items-center">
-        <div class="col-md-6">
-          <img src="../assets/img/products/product.jpg" alt="" width="400" />
-        </div>
-        <div class="col-md-6">
+        
+        <div class="col-md-5">
+          <img src="../assets/img/products/product.jpg" alt="" width="240px" />
           <h3>Contact us</h3>
           <p>HotLine - 077-211-2112</p>
-          <button @click="goToAbout" class="btn custom-btn btn-outline-primary mr-4">
+          <!--div>
+            <button @click="goToAbout" class="btn custom-btn btn-outline-primary mr-4">
             About Us
-          </button>
+            </button>
+          </div-->
+          &nbsp;
           <div>
-              <a class="btn btn-outline-info border-1 mx-1 my-2 my-sm-2" href="https://twitter.com/">
-                <i class="fab fa-twitter-square"></i>
-              </a>
-              <a class="btn btn-outline-info border-1 mx-1 my-2 my-sm-1" href="https://www.facebook.com/">
-                <i class="fab fa-facebook-square"></i>
-              </a>
-              <a class="btn btn-outline-info border-1 mx-1 my-2 my-sm-1" href="https://www.instagram.com/">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a class="btn btn-outline-info border-1 mx-1 my-2 my-sm-1" href="https://www.whatsapp.com/">
-                <i class="fab fa-whatsapp-square"></i>
-              </a>
-              <a class="btn btn-outline-info border-1 mx-1 my-2 my-sm-1" href="https://lk.linkedin.com/">
-                <i class="fab fa-linkedin"></i>
-              </a>
+            <a href="https://www.facebook.com/ikeasrilanka/">
+              <img src="../assets/img/svg/facebook (1).svg" width="50" />
+            </a>
+            &nbsp;
+            <a href="https://www.instagram.com">
+              <img src="../assets/img/svg/instagram (1).svg" width="50" />
+            </a>
+            &nbsp;
+            <a href="https://www.whatsapp.com">
+              <img src="../assets/img/svg/whatsapp.svg" width="50" />
+            </a>
+            &nbsp;
+            <a href="https://www.twitter.com">
+              <img src="../assets/img/svg/twitter (1).svg" width="50" />
+            </a>
+            &nbsp;
+            <a href="https://lk.linkedin.com">
+              <img src="../assets/img/svg/linkedin (1).svg" width="50" />
+            </a>
+          </div>
+        </div>
+        <div class="col-md-5">
+          
+          <div class="hero-content p-3 mb-2 bg-primary text-white">
+            <h1 class="hero-title">Team will answer all your questions.</h1>
+            <p>
+              <input
+                class="form-control mr-sm-2"
+                type="text"
+                placeholder="Full name"
+              />
+            </p>
+            <p>
+              <input
+                class="form-control mr-sm-2"
+                type="text"
+                placeholder="Email"
+              />
+            </p>
+            <p>
+              <input
+                class="form-control mr-sm-2"
+                type="text"
+                placeholder="Your message"
+              />
+            </p>
+            <p>
+              <button class="btn custom-btn btn btn-light col-md-5">Send</button>
+            </p>
           </div>
         </div>
       </div>
@@ -39,25 +75,16 @@
 export default {
   name: "ContactUs",
   props: {
-    msg: String
+    msg: String,
   },
-
-  methods: {
-    goToAbout: function(){
-      this.$router.push("/about")
-    }
-  }
 };
 </script>
 
 <style scoped lang="scss">
-  .hero{
-    padding-top: 7rem;
-    width: 100%;
-    height: 500px;
-    text-align: left;
-  }
-
-
-
+.hero {
+  padding-top: 7rem;
+  width: 100%;
+  height: 500px;
+  text-align: left;
+}
 </style>
