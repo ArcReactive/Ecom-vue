@@ -12,15 +12,19 @@
                   <input
                   class="form-control mr-sm-2"
                   type="search"
-                  placeholder="ex: order"
+                  placeholder="Example: 'Order'"
                   aria-label="Search"
                 />
                 </p>
               </div>
             </div>
-            <div class="col-md-7">
+            <div class="col-md-5"><br>
                 <div class="graphic">
-
+                  <button type="button" class="btn btn-light">Your Orders, Track packages, Edit or cancel orders</button><br><br>
+                  <button type="button" class="btn btn-light">Digital Services and Device Support, Troubleshoot device issues</button><br><br>
+                  <button type="button" class="btn btn-light">Return or exchange items, Print return mailing labels</button><br><br>
+                  <button type="button" class="btn btn-light">Add or edit payment methods, View, reload gift card balance</button><br><br>
+                  <button type="button" class="btn btn-light">IKEA and COVID-19, FAQs about the impact on ordering</button><br><br>
                 </div>
             </div>
           </div>
