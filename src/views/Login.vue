@@ -1,14 +1,7 @@
-<!--template>
-  <div class="login">
-    <!-- Modal >
-    <div
-      class="modal fade"
-      id="login"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="loginTitle"
-      aria-hidden="true"
-    >
+<template>
+  <div class="hero">
+    <Navbar></Navbar>
+    <div class="container h-100">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-body">
@@ -133,36 +126,31 @@
       </div>
     </div>
   </div>
-</template-->
+</template>
 
-
-
-<!--script>
+<script>
 import required from "vuelidate/lib/validators";
 import { fb, db } from "../firebase";
-// import { use } from "vue/types/umd";
+
 export default {
-  name: "Login",
-  props: {
-    msg: String
-  },
+  name: "Loginn",
   data() {
     return {
-      name: null,
+      firstname: null,
       email: null,
-      password: null
+      password: null,
     };
   },
-  validation: {
-    name: {
-      required
+  validations: {
+    firstname: {
+      required,
     },
     email: {
-      required
+      required,
     },
     password: {
-      required
-    }
+      required,
+    },
   },
   methods: {
     login() {
@@ -219,10 +207,14 @@ export default {
     }
   }
 };
+</script>
 
-//try to make login as a different page.
-</script-->
+<style scoped>
+.hero{
+    padding-top: 7rem;
+    width: 100%;
+    height: 500px;
+    text-align: left;
+  }
+</style>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<!--style scoped lang="scss">
-</style-->

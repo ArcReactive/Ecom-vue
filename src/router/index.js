@@ -37,7 +37,14 @@ const routes = [
     path: "/contactus",
     name: "ContactUs",
     component: Contact
+  },
+  {
+    path: "/loginn",
+    name: "Loginn",
+    component: () =>
+      import( "../views/Login.vue")
   }
+
 ];
 
 const router = new VueRouter({
