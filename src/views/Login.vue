@@ -158,7 +158,7 @@ export default {
         .signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
           //$
-          ("#login").modal("hide");
+          // ("#login").modal("hide")
           this.$router.replace("admin");
         })
         .catch(function (error) {
@@ -178,7 +178,7 @@ export default {
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(user => {
           //$
-          ("#login").modal("hide");
+          // ("#login").modal("hide");
           console.log(user.user.uid);
           db.collection("profiles")
             .doc(user.user.uid)
