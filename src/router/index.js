@@ -1,6 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import Admin from "../views/Admin.vue";
+import Overview from "../views/Overview.vue";
+import Products from "../views/Products.vue";
+import Orders from "../views/Orders.vue";
+import Profile from "../views/Profile.vue";
 import {fb} from '../firebase';
 import Contact from "../views/ContactUs";
 
@@ -11,6 +16,36 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home
+  },
+  {
+    path: "/admin",
+    name: "admin",
+    component: Admin,
+    // a meta field
+    meta: { requiresAuth: true },
+    children:[
+      {
+        path: "overview",
+        name: "overview",
+        component: Overview
+      },
+      {
+        path: "products",
+        name: "products",
+        component: Products
+      },
+      {
+        path: "profile",
+        name: "profile",
+        component: Profile
+      },
+      {
+        path: "orders",
+        name: "orders",
+        component: Orders
+      }
+
+    ]
   },
   {
     path: "/about",
