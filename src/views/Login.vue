@@ -1,6 +1,5 @@
 <template>
   <div class="hero">
-    <Navbar></Navbar>
     <div class="container h-100">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -43,7 +42,7 @@
                 role="tabpanel"
                 aria-labelledby="pills-login-tab"
               >
-                <h5 class="text-center">Login Please</h5>
+                <h5 class="text-center">Admin Login</h5>
                 <div class="form-group">
                   <input
                     type="email"
@@ -129,36 +128,27 @@
 </template>
 
 <script>
-import required from "vuelidate/lib/validators";
 import { fb, db } from "../firebase";
 
 export default {
   name: "Loginn",
   data() {
     return {
-      firstname: null,
+      name: null,
       email: null,
       password: null,
     };
   },
-  validations: {
-    firstname: {
-      required,
-    },
-    email: {
-      required,
-    },
-    password: {
-      required,
-    },
-  },
   methods: {
     login() {
-      fb.auth()
+      if(this.email == null || this.password == null){
+          alert("Please enter your credentials."); 
+      }else{
+        fb.auth()
         .signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
           //$
-          ("#login").modal("hide");
+          //("#login").modal("hide");
           this.$router.replace("admin");
         })
         .catch(function (error) {
@@ -172,13 +162,24 @@ export default {
           }
           console.log(error);
         });
+      }
+      
     },
     register() {
-      fb.auth()
+      if(this.name == null || this.email == null || this.password == null){
+          if(this.name == null){
+          alert("Please enter your name.");
+          }else if(this.email == null){
+            alert("Please enter your email.");
+          }else{
+            alert("Please enter your password.");
+          }
+      }else{
+        fb.auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(user => {
           //$
-          ("#login").modal("hide");
+          //("#login").modal("hide");
           console.log(user.user.uid);
           db.collection("profiles")
             .doc(user.user.uid)
@@ -204,6 +205,8 @@ export default {
           }
           console.log(error);
         });
+      }
+      
     }
   }
 };

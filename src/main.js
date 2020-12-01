@@ -3,13 +3,15 @@ import App from "./App.vue";
 import router from "./router";
 import 'bootstrap';
 import './assets/app.scss';
-import Vuelidate from 'vuelidate';
+//import Vuelidate from 'vuelidate';
+import { ValidationProvider, ValidationObserver } from 'vee-validate';
 import VueFirestore from 'vue-firestore';
 import jQuery from 'jquery';
 import 'popper.js';
 window.$ = window.jQuery = jQuery;
 
-Vue.use(Vuelidate)
+Vue.component('ValidationProvider',ValidationProvider);
+Vue.component('ValidationObserver',ValidationObserver);
 
 Vue.use(VueFirestore, {
   key: 'id',         // the name of the property. Default is '.key'.
