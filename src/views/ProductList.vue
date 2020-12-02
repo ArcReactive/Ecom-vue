@@ -1,48 +1,35 @@
 <template>
   <div class="products" id="products">
-      <Navbar></Navbar>
       <div class="container">
-           <h1 class="text-center p-5">Our Products</h1>
+          <h2 class="text-center p-4">Recommented for you</h2>
           <div class="row">
               
-              <div class="col-md-4">
+              <div class="col-md-4" v-for="product in products">
                   <div class="card product-item">
-                    <img src="../assets/img/products/antilop.jpg" class="card-img-top" alt="...">
+
+                        <carousel :perPage="1">
+                          <slide v-for="(image, index) in product.images">
+                                <img :src="image" class="card-img-top" alt="..." width="250px">
+                          </slide>
+                        </carousel>
+                
                         <div class="card-body">
-                            <h5 class="card-title">ikea antilop high chair with tray</h5>
-                            <p class="card-text">
-                                Out of stocks
-                            </p>
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
+                          <div class="d-flex justify-content-between">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <h5 class="card-priceS">Rs.{{ product.price }}</h5>
+
+                          </div>
+                           
+                            <add-to-cart 
+                                :image="getImage(product.images)"
+                                :p-id="product.id"
+                                :price="product.price"
+                                :name="product.name">
+                            </add-to-cart>
                         </div>
                     </div>
               </div>
 
-              <div class="col-md-4">
-                  <div class="card product-item">
-                    <img src="../assets/img/products/hemnes.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">hemnes white light brown</h5>
-                            <p class="card-text">
-                                Out of stocks
-                            </p>
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                        </div>
-                    </div>
-              </div>
-
-              <div class="col-md-4">
-                  <div class="card product-item">
-                    <img src="../assets/img/products/kivik.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">ikea kivik dark grey</h5>
-                            <p class="card-text">
-                            Out of stocks
-                            </p>
-                            <a href="#" class="btn btn-primary">Add to Cart</a>
-                        </div>
-                    </div>
-              </div>
           </div>
       </div>
     
@@ -50,11 +37,29 @@
 </template>
 
 <script>
+import {db} from '../firebase';
+
 export default {
   name: "ProductsList",
   props: {
     msg: String
-  }
+  },
+data(){
+    return {
+        products: [],
+     
+    }
+  },
+  methods:{
+    getImage(images){
+      return images[0];
+    }
+  },
+  firestore(){
+      return {
+        products: db.collection('products'),
+      }
+  },
 };
 </script>
 
