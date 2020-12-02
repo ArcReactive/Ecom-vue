@@ -1,5 +1,6 @@
 <template>
   <div class="products" id="products">
+    <Navbar></Navbar>
       <div class="container">
           <h2 class="text-center p-4">Recommented for you</h2>
           <div class="row">
@@ -19,7 +20,6 @@
                             <h5 class="card-priceS">Rs.{{ product.price }}</h5>
 
                           </div>
-                           
                             <add-to-cart 
                                 :image="getImage(product.images)"
                                 :p-id="product.id"
@@ -32,14 +32,16 @@
 
           </div>
       </div>
-    
+    <mini-cart></mini-cart>
   </div>
 </template>
 
 <script>
+import AddToCart from '../components/AddToCart.vue';
 import {db} from '../firebase';
 
 export default {
+  components: { AddToCart },
   name: "ProductsList",
   props: {
     msg: String

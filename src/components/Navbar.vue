@@ -54,15 +54,9 @@
               data-target="#login"
               >Get Start</a
             -->
-              <li class="nav-item">
-                <a
-                  class="btn btn-outline-info border-0 mx-2 my-2 my-sm-0"
-                  data-toggle="modal"
-                  data-target="#miniCart"
-                >
-                  <i class="fas fa-cart-plus"></i>
-                </a>
-              </li>
+              <a class="btn btn-outline-info border-0 mx-2 my-2 my-sm-0" data-toggle="modal" data-target="#miniCart">
+              <i class="fas fa-cart-plus"></i>
+              </a>
             </ul>
           </form>
         </div>
@@ -72,6 +66,7 @@
 </template>
 
 <script>
+ 
 export default {
   name: "Navbar",
   props: {
