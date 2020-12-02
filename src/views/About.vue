@@ -22,7 +22,7 @@
           <div class="row h-100 justify-content-center align-items-center">
             <div class="col-md-5">
                 <div class="graphic">
-                    <img src="../assets/img/svg/woman-carrying-IKEA-PS-watering-cans-ai020102-PH126968-ikea-l-thumb.jpg" alt="" width="450px">
+                    <img src="../assets/img/svg/asia-premier-ecommerce-customer-support-02-800x531-1.jpg" alt="" width="450px">
                 </div>
             </div>
             <div class="col-md-5">
@@ -34,13 +34,6 @@
                   People all over the world found new purpose for their homes as they changed their living rooms into offices and rediscovered life at home.
                 </p>
               </div>
-            </div>
-          </div>
-          <div class="row h-100 justify-content-center align-items-center">
-            <div class="col-md-11">
-                <div class="graphic">
-                    <img src="../assets/img/svg/a-boy-playing-in-his-room-ai01-02-PH156118-ikea-l.jpg" alt="" width="1000px">
-                </div>
             </div>
           </div>
         </div>
