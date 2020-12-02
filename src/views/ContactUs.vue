@@ -45,6 +45,7 @@
                 class="form-control mr-sm-2"
                 type="text"
                 placeholder="Full name"
+                v-model="name"
               />
             </p>
             <p>
@@ -52,17 +53,14 @@
                 class="form-control mr-sm-2"
                 type="text"
                 placeholder="Email"
+                v-model="email"
               />
             </p>
             <p>
-              <input
-                class="form-control mr-sm-2"
-                type="text"
-                placeholder="Your message"
-              />
+              <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Your message here" rows="3" v-model="message"></textarea>
             </p>
             <p>
-              <button class="btn custom-btn btn btn-light col-md-5">Send</button>
+              <button class="btn custom-btn btn btn-light col-md-5" @click="SendDetails">Send</button>
             </p>
           </div>
         </div>
@@ -77,6 +75,20 @@ export default {
   props: {
     msg: String,
   },
+  data() {
+    return {
+      name: null,
+      email: null,
+      message: null,
+    };
+  },
+  methods: {
+    SendDetails: function(){
+      this.name = null,
+      this.email = null,
+      this.message = null
+    }
+  }
 };
 </script>
 
