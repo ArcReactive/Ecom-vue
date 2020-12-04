@@ -47,7 +47,7 @@
   </div>
 </template>
 
-<!--script>
+<script>
 // import stripee from 'vue-stripe-elements-plus';
 import axios from 'axios';
 var stripe = Stripe('pk_test_3yyWicMGKdLdRD28kHM3ANkX00vOa4k2B3');
@@ -86,7 +86,7 @@ export default {
   
   }
 }
-</script-->
+</script>
 
 
 

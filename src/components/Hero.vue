@@ -12,11 +12,11 @@
                 </p>
                 <div class="hero-btn mt-5">
                   <button class="btn custom-btn btn-info mr-4" @click="goToAbout">Explore</button>
-                  <button class="btn custom-btn btn-outline-secondary">Products</button>
+                  <button class="btn custom-btn btn-outline-secondary" @click="goToProList">Products</button>
                 </div>
-                <div class="hero-btn mt-5">
+                <!--div class="hero-btn mt-5">
                   <button class="btn custom-btn btn-info mr-4" @click="goToLogin">Login Or Signup</button>
-                </div>
+                </div-->
               </div>
             </div>
             <div class="col-md-5">
@@ -39,8 +39,8 @@ export default {
     goToAbout: function(){
       this.$router.push("/about")
     },
-    goToLogin: function(){
-      this.$router.push("/loginn")
+    goToProList: function(){
+      this.$router.push("/productlist")
     }
   }
 };

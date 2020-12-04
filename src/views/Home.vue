@@ -7,7 +7,8 @@
     
     <!--Login></Login-->
 
-    <!--mini-cart></mini-cart-->
+
+    <mini-cart></mini-cart>
   </div>
 </template>
 

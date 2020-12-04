@@ -8,6 +8,7 @@ import Orders from "../views/Orders.vue";
 import Profile from "../views/Profile.vue";
 import {fb} from '../firebase';
 import Contact from "../views/ContactUs";
+import ProductList from "../views/ProductList";
 
 Vue.use(VueRouter);
 
@@ -78,6 +79,11 @@ const routes = [
     name: "Loginn",
     component: () =>
       import( "../views/Login.vue")
+  },
+  {
+    path: "/productlist",
+    name: "ProductsList",
+    component: ProductList
   }
 
 ];
