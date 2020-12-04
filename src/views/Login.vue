@@ -1,14 +1,6 @@
-<!--template>
-  <div class="login">
-    <!-- Modal >
-    <div
-      class="modal fade"
-      id="login"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="loginTitle"
-      aria-hidden="true"
-    >
+<template>
+  <div class="hero">
+    <div class="container h-100">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-body">
@@ -50,7 +42,7 @@
                 role="tabpanel"
                 aria-labelledby="pills-login-tab"
               >
-                <h5 class="text-center">Login Please</h5>
+                <h5 class="text-center">Admin Login</h5>
                 <div class="form-group">
                   <input
                     type="email"
@@ -133,44 +125,30 @@
       </div>
     </div>
   </div>
-</template-->
+</template>
 
-
-
-<!--script>
-import required from "vuelidate/lib/validators";
+<script>
 import { fb, db } from "../firebase";
-// import { use } from "vue/types/umd";
+
 export default {
-  name: "Login",
-  props: {
-    msg: String
-  },
+  name: "Loginn",
   data() {
     return {
       name: null,
       email: null,
-      password: null
+      password: null,
     };
-  },
-  validation: {
-    name: {
-      required
-    },
-    email: {
-      required
-    },
-    password: {
-      required
-    }
   },
   methods: {
     login() {
-      fb.auth()
+      if(this.email == null || this.password == null){
+          alert("Please enter your credentials."); 
+      }else{
+        fb.auth()
         .signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
           //$
-          ("#login").modal("hide");
+          //("#login").modal("hide");
           this.$router.replace("admin");
         })
         .catch(function (error) {
@@ -184,13 +162,24 @@ export default {
           }
           console.log(error);
         });
+      }
+      
     },
     register() {
-      fb.auth()
+      if(this.name == null || this.email == null || this.password == null){
+          if(this.name == null){
+          alert("Please enter your name.");
+          }else if(this.email == null){
+            alert("Please enter your email.");
+          }else{
+            alert("Please enter your password.");
+          }
+      }else{
+        fb.auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(user => {
           //$
-          ("#login").modal("hide");
+          //("#login").modal("hide");
           console.log(user.user.uid);
           db.collection("profiles")
             .doc(user.user.uid)
@@ -216,13 +205,19 @@ export default {
           }
           console.log(error);
         });
+      }
+      
     }
   }
 };
+</script>
 
-//try to make login as a different page.
-</script-->
+<style scoped>
+.hero{
+    padding-top: 7rem;
+    width: 100%;
+    height: 500px;
+    text-align: left;
+  }
+</style>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<!--style scoped lang="scss">
-</style-->
